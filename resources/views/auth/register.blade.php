@@ -1,0 +1,63 @@
+<x-login-layout>
+    <x-auth-card>
+
+        <!-- Session Status -->
+        <x-auth-session-status class="mb-4" :status="session('status')" />
+
+        <!-- Validation Errors -->
+        <x-auth-validation-errors class="mb-4" :errors="$errors" />
+        <div id="auth">
+
+            <div class="row d-flex justify-content-center">
+                <div class="col-5 ">
+                    <div id="auth-left" style="padding: 50px !important">
+                        <div class="auth-logo text-center" style="margin-bottom: 40px !important">
+                            <a href="/"><img src="assets/images/logo/logoatios.png" alt="Logo" class="w-50 h-50 "></a>
+                        </div>
+                        <h1 class="text-center mb-4">Silahkan Login </h1>
+
+                        <form method="POST" action="{{ route('register') }}">
+                            @csrf
+
+                            <div class="form-floating mb-4">
+                                <input type="teks" name="name" class="form-control  @error('name') is-invalid @enderror" id="name" placeholder="Nama Anda" autofocus required value="{{old ('name') }}">
+                                <label for="name">Nama</label>
+                                @error('name')
+                                <div class="invalid-feedback">
+                                    {{ $message }}
+                                </div>
+                                @enderror
+                            </div>
+
+                            <div class="form-floating mb-4">
+                                <input type="email" email="email" class="form-control  @error('email') is-invalid @enderror" id="email" name="email" placeholder="email@example.com" autofocus autocomplete="new-password" required value="{{old ('email') }}">
+                                <label for="email">Email</label>
+                                @error('email')
+                                <div class="invalid-feedback">
+                                    {{ $message }}
+                                </div>
+                                @enderror
+                            </div>
+
+                            <div class="form-floating mb-4">
+                                <input type="password" name="password" email="password" class="form-control" id="password" placeholder="Password" required>
+                                <label for="password">Password</label required>
+                            </div>
+
+                            <div class="form-floating mb-4">
+                                <input type="password" email="password_confirmation" class="form-control" id="password_confirmation" placeholder="password_confirmation" name="password_confirmation" required>
+                                <label for="password_confirmation">password_confirmation</label required>
+                            </div>
+
+                            <button class="w-100 btn btn-lg btn-primary" type="submit">Register</button>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+    </x-auth-card>
+</x-login-layout>
