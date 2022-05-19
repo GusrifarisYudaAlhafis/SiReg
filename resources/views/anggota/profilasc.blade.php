@@ -10,14 +10,14 @@
                     <h5 class="card-title">Profil</h5>
                 </div>
                 <div class="card-body">
-                    <div class="col-lg-3 mb-2" style="margin: auto;">
+                    <div class="col-lg-3 mb-2 text-center" style="margin: auto;">
                         @foreach ($profil as $p)
                         @endforeach
                         <a href="#">
                             @if($p->foto == null)
-                                <img class="w-100 h-100 active rounded-circle" src="{{ asset('assets/images/faces/1.jpg') }}" data-bs-target="#Gallerycarousel" data-bs-slide-to="0" alt="">
+                                <img class="rounded-circle" width="250" height="250" src="{{ asset('assets/images/faces/1.jpg') }}" alt="profil">
                             @else
-                                <img class="w-100 h-100 active rounded-circle" src="{{ asset('storage/foto/'.$p->foto) }}" data-bs-target="#Gallerycarousel" data-bs-slide-to="0" alt="">
+                                <img class="rounded-circle" width="250" height="250" src="{{ asset('storage/foto/'.$p->foto) }}" alt="profil">
                             @endif
                         </a>
                     </div>

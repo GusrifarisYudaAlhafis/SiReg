@@ -14,7 +14,7 @@
                         <div class="auth-logo text-center" style="margin-bottom: 40px !important">
                             <a href="/"><img src="assets/images/logo/logoatios.png" alt="Logo" class="w-50 h-50 "></a>
                         </div>
-                        <h1 class="text-center mb-4">Silahkan Login </h1>
+                        <h1 class="text-center mb-4">Silahkan Daftar </h1>
 
                         <form method="POST" action="{{ route('register') }}">
                             @csrf

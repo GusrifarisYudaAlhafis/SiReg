@@ -10,7 +10,7 @@
                     <div class="col-xl-4 col-md-6 col-sm-6">
                         <div class="card">
                             <div class="card-content">
-                                <img class="img-fluid w-100" src="{{ asset('storage/foto/'.$i->foto) }}" alt="Card image cap">
+                                <img class="img-fluid" src="{{ asset('storage/foto/'.$i->foto) }}" style="width: 500px" alt="Card image cap">
                                 <div class="card-body">
                                     <h4 class="card-title">{{ $i->judul }}</h4>
                                 </div>

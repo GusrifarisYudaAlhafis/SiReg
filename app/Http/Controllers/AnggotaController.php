@@ -91,6 +91,9 @@ class AnggotaController extends Controller
             $generateOrder_nr = 'ATS-' . str_pad(1, 4, "0", STR_PAD_LEFT);
         }
 
+        $user = User::where('id', auth()->user()->id)->first();
+        $user->update(['foto' => $data['foto'], 'name' => $data['nama']]);
+
         Tiket::create([
             'kode' => $generateOrder_nr,
             'status' => 'Diproses',
@@ -143,6 +146,9 @@ class AnggotaController extends Controller
             $generateOrder_nr = 'ASC-' . str_pad(1, 4, "0", STR_PAD_LEFT);
         }
 
+        $user = User::where('id', auth()->user()->id)->first();
+        $user->update(['foto' => $data['foto'], 'name' => $data['nama']]);
+
         Tiket::create([
             'kode' => $generateOrder_nr,
             'status' => 'Diproses',
@@ -190,7 +196,7 @@ class AnggotaController extends Controller
         if ($kode[0]['status'] == 'Diproses') {
             Alert::info('Menunggu', 'Pendaftaran diproses');
         } elseif ($kode[0]['status'] == 'Tidak Lulus') {
-            Alert::danger('Maaf', 'Anda tidak lulus');
+            Alert::error('Maaf', 'Anda tidak lulus');
         }
 
         return view('anggota.tracking', [
@@ -272,6 +278,16 @@ class AnggotaController extends Controller
         } else {
             $foto = AnggotaUmum::where('id', $umum)->get();
             $data['foto'] = $foto[0]->foto;
+        }
+
+        if ($request->file('kartu_identitas')) {
+            $kartu_identitas = $request->file('kartu_identitas');
+            $tujuan = 'storage/kartu_identitas';
+            $kartu_identitas->move($tujuan, $kartu_identitas->getClientOriginalName());
+            $data['kartu_identitas'] = $request->file('kartu_identitas')->getClientOriginalName();
+        } else {
+            $kartu_identitas = AnggotaUmum::where('id', $umum)->get();
+            $data['kartu_identitas'] = $kartu_identitas[0]->kartu_identitas;
         }
 
         $cek = AnggotaUmum::findOrFail($umum);

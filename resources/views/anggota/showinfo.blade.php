@@ -6,8 +6,8 @@
         </div>
         <div id="main">
             <div class="card">
-                <div class="card-content">
-                    <img class="card-img-top img-fluid" src="{{ asset('storage/foto/'.$info->foto) }}" alt="Card image cap" style="height: 20rem" />
+                <div class="card-content text-center">
+                    <img class="card-img-top img-fluid" src="{{ asset('storage/foto/'.$info->foto) }}" style="width: 500px" alt="Card image cap"/>
                     <div class="card-body">
                         <h4 class="card-title d-flex justify-content-center">{{ $info->judul }}</h4>
                         <p class="card-text">{{ $info->konten }}</p>
@@ -26,4 +26,5 @@
                 </div>
             </footer>
         </div>
+    </div>
 </x-app-layout>

@@ -52,8 +52,10 @@ class RegisteredUserController extends Controller
 
         if(Auth::user()->role == 'admin') {
             return redirect(RouteServiceProvider::ADMIN);
-        } else {
+        } elseif (Auth::user()->role == 'umum' || Auth::user()->role == 'asc') {
             return redirect(RouteServiceProvider::ANGGOTA);
+        } else {
+            return redirect(RouteServiceProvider::CALON);
         }
     }
 }
