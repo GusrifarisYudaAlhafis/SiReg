@@ -41,9 +41,20 @@
                                         </div>
                                         <div class="col-lg-6 mb-2">
                                             <div class="form-group has-icon-left">
-                                                <label for="ttl"><b>Tempat Tanggal Lahir</b></label>
+                                                <label for="tempat_lahir"><b>Tempat Lahir</b></label>
                                                 <div class="position-relative">
-                                                    <input type="text" class="form-control" placeholder="Tempat Tanggal Lahir" id="ttl" name="ttl" value="{{ $p->ttl }}">
+                                                    <input type="text" class="form-control" placeholder="Tempat Lahir" id="tempat_lahir" name="tempat_lahir" value="{{ $p->tempat_lahir }}">
+                                                    <div class="form-control-icon">
+                                                        <i class="bi bi-geo-alt"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 mb-2">
+                                            <div class="form-group has-icon-left">
+                                                <label for="tanggal_lahir"><b>Tanggal Lahir</b></label>
+                                                <div class="position-relative">
+                                                    <input type="date" class="form-control" placeholder="Tanggal Lahir" id="tanggal_lahir" name="tanggal_lahir" value="{{ $p->tanggal_lahir }}">
                                                     <div class="form-control-icon">
                                                         <i class="bi bi-calendar"></i>
                                                     </div>

@@ -9,7 +9,6 @@
                 <section class="section">
                     <div class="card">
                         <div class="card-header">
-
                             <h3>Daftar Anggota Umum</h3>
                         </div>
                         <div class="card-body">
@@ -95,9 +94,17 @@
                                                             </div>
                                                             <div class="col-12">
                                                                 <div class="form-group has-icon-left">
-                                                                    <label>Tempat/tanggal lahir</label>
+                                                                    <label>Tempat lahir</label>
                                                                     <div class="position-relative">
-                                                                        <p>{{ $a->ttl }}</p>
+                                                                        <p>{{ $a->tempat_lahir }}</p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-12">
+                                                                <div class="form-group has-icon-left">
+                                                                    <label>Tanggal lahir</label>
+                                                                    <div class="position-relative">
+                                                                        <p>{{ date_format(new DateTime($a->tanggal_lahir), "d-M-Y") }}</p>
                                                                     </div>
                                                                 </div>
                                                             </div>

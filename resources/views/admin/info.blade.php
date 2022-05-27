@@ -65,7 +65,7 @@
                                                                 <div class="col-12">
                                                                     <div class="form-group">
                                                                         <label for="konten">Keterangan</label>
-                                                                        <input type="text" class="form-control" placeholder="Keterangan" id="konten" name="konten" value="{{ $i->konten }}">
+                                                                        <textarea name="konten" id="konten" cols="30" rows="10" class="form-control">{{ $i->konten }}</textarea>
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-12">
@@ -160,7 +160,7 @@
                                     <div class="col-12">
                                         <div class="form-group">
                                             <label for="konten">Keterangan</label>
-                                            <input type="text" class="form-control" placeholder="Keterangan" id="konten" name="konten" value="{{ old('konten') }}" required>
+                                            <textarea name="konten" id="konten" cols="30" rows="10" class="form-control" required></textarea>
                                         </div>
                                     </div>
                                     <div class="col-12">

@@ -44,9 +44,20 @@
                                                 </div>
                                                 <div class="col-12">
                                                     <div class="form-group has-icon-left">
-                                                        <label for="ttl">Tempat Tanggal Lahir</label>
+                                                        <label for="tempat_lahir">Tempat Lahir</label>
                                                         <div class="position-relative">
-                                                            <input type="text" class="form-control" placeholder="Tempat Tanggal Lahir" id="ttl" name="ttl" value="{{ old('ttl') }}">
+                                                            <input type="text" class="form-control" placeholder="Tempat Lahir" id="tempat_lahir" name="tempat_lahir" value="{{ old('tempat_lahir') }}">
+                                                            <div class="form-control-icon">
+                                                                <i class="bi bi-geo-alt"></i>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-12">
+                                                    <div class="form-group has-icon-left">
+                                                        <label for="tanggal_lahir">Tanggal Lahir</label>
+                                                        <div class="position-relative">
+                                                            <input style="width: 200px;" type="date" class="form-control" placeholder="Tanggal Lahir" id="tanggal_lahir" name="tanggal_lahir" value="{{ old('tanggal_lahir') }}">
                                                             <div class="form-control-icon">
                                                                 <i class="bi bi-calendar"></i>
                                                             </div>

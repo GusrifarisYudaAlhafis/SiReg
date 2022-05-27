@@ -25,7 +25,6 @@ class AnggotaUmumRequest extends FormRequest
     {
         return [
             'nama' => ['required', 'string'],
-            'ttl' => ['required', 'string'],
             'jenis_kelamin' => ['required', 'string'],
             'alamat' => ['required'],
             'hp' => ['required', 'string'],

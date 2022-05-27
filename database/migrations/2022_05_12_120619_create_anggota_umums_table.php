@@ -23,7 +23,8 @@ return new class extends Migration
             $table->foreignIdFor(Bidang::class)->constrained()->onUpdate('cascade')->onDelete('cascade');
             $table->string('nama');
             $table->string('email')->unique();
-            $table->string('ttl');
+            $table->string('tempat_lahir');
+            $table->date('tanggal_lahir');
             $table->enum('jenis_kelamin', ['Laki-laki', 'Perempuan']);
             $table->text('alamat');
             $table->string('hp');
